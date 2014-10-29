@@ -10,12 +10,15 @@
   <ion-content class="has-header" >
       <ion-list class="list" show-delete="shouldShowDelete"
                 show-reorder="shouldShowReorder"
-                can-swipe="listCanSwipe">
+                can-swipe="listCanSwipe" option-buttons="itemButtons">
 
-          <ion-item class="item item-icon-right " ng-repeat="item in accounts" ng-click="accountClick(item)">
-
-              <h2>{{item.name}} </h2>
-              <p>{{item.ammount | currency}}</p>
+          <ion-item class="item item-icon-left item-icon-right" ng-repeat="item in accounts" ng-click="accountClick(item)">
+              <i class="icon ion-card"></i>
+              <div class="row">
+                  <h1>{{item.name}}</h1>
+                  <br/>
+              </div>
+              <p>{{item.total | currency}}</p>
 
               <i class="icon ion-ios7-arrow-right"></i>
               <ion-option-button class="button-info"
@@ -36,7 +39,7 @@
           <!--<div class="col col-50" ng-repeat="item in accounts">-->
               <!--<div class="card">-->
                   <!--<div class="item  text-center">-->
-                      <!--{{item.ammount}}-->
+                      <!--{{item.amount}}-->
                   <!--</div>-->
                   <!--<div class="item  text-center">-->
                       <!--<i class="icon ion-locked"></i>-->
